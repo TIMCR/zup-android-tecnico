@@ -65,6 +65,13 @@ android {
             versionCode 10104
             versionName '1.1.4'
         }
+        vcmcr {
+            minSdkVersion 23
+            targetSdkVersion 24
+            versionCode 10000
+            versionName '1.0.0'
+            applicationId 'br.gov.pr.mcr.vc.tec'
+        }
     }
     sourceSets {
         zup {
@@ -85,6 +92,13 @@ android {
             resources.srcDirs = ['src/particity/res']
             res.srcDirs = ['src/particity/res']
             assets.srcDirs = ['src/particity/assets']
+        }
+        vcmcr {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/vcmcr/java', 'build/generated/source/apt/${variant.dirName}']
+            resources.srcDirs = ['src/vcmcr/res']
+            res.srcDirs = ['src/vcmcr/res']
+            assets.srcDirs = ['src/vcmcr/assets']
         }
     }
     buildTypes {
